@@ -1,0 +1,29 @@
+<script>
+/**
+ * @name lsw
+ * @date 2020-4-26
+ * @function 最长公共前缀
+ * @param {string[]} strs
+ * @return {string}
+ */
+    var longestCommonPrefix = function (strs) {
+        // 提出第一个字符串
+        let str = strs[0];
+
+        if (strs.length <= 1) {
+            console.log(strs.join(''))
+            return;
+        }
+        // 数组里面其他的字符串与第一个字符串比较
+        for (let i = 0; i < str.length; i++) {
+            for (let j = 0; j < strs.length - 1; j++) {
+                if (strs[j][i] != strs[j + 1][i]) {
+                    console.log(str.slice(0, i));
+                    return;
+                }
+            }
+        } 
+        console.log(str)
+    }
+
+</script>
